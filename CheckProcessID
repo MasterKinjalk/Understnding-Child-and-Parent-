@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<unistd.h>
+int main()
+{
+int p_id;
+p_id=getpid();
+printf("Process ID of example.c: %d\n",p_id);
+printf("\n");
+char *args[]={"./hello", NULL};
+execv(args[0],args);
+}
+Hello.c:
+#include<stdio.h>
+#include<unistd.h>
+int main()
+{
+int p_id;
+p_id=getpid();
+printf("We are in hello.c\n");
+printf("Process ID of hello.c: %d\n",p_id);
+printf("\n");
+}
